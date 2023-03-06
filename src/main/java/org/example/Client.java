@@ -11,6 +11,7 @@ public class Client {
     }
 
     public boolean maxBankAccounts(){
+
         if(banksAccounts.size() > 5){
             return false;
         }
