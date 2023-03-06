@@ -44,25 +44,30 @@ public class BankAccount {
             throw new Exception("Opération echoue, il n'est pas possible de prendre le montant !");
         }
         return res;
+
     }
 
     public float credit(float solde) throws Exception {
 
         float res = this.solde + solde;
-
+        System.out.println("Montant ajouté : "+solde);
         if(res > 1000){
-            throw new Exception("Le montant n'a pas pu être ajouté !");
+            this.solde = 1000;
+            throw new Exception("Le montant n'a pas pu être ajouté !,Le montant qui n'a pas pu être ajouté s'eleve à "+(res - 1000)+"€");
         }
+
         return res;
 
     }
     public float debiter(float solde) throws Exception {
 
         float res = this.solde - solde;
-
+        System.out.println("Montant debité : " +solde);
         if(res < 0){
             throw new Exception("Le montant n'a pas pu être prélevé !");
         }
+
+
         return res;
 
     }
